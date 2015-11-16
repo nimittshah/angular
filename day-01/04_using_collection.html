@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using Data</title>
+		<script src="lib/angular.js"></script>
+	</head>
+	<body ng-app ng-init="heros=[
+		{hName: 'Batman', photo: 'images/batman.jpg'},
+		{hName: 'Superman', photo: 'images/superman.jpg'},
+		{hName: 'Ironman',  photo: 'images/ironman.jpg'},
+		{hName: 'Spiderman', photo: 'images/spiderman.jpg'},
+		{hName: 'Rajani',  photo: 'images/rajani.jpg'}
+		]">
+		<ul>
+			<li ng-repeat="hero in heros"><img src="{{hero.photo}}" width="30" /> {{hero.hName}} </li>
+		</ul>
+	</body>
+</html>
