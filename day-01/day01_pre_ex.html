@@ -1,0 +1,19 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<script>
+			window.onload = function(){
+				var inp = document.querySelector("input");
+				var lbl = document.querySelector("label");
+				inp.addEventListener("keydown", function(event){
+					lbl.textContent = event.target.value;
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt">
+		<br/>
+		<label id="lbl"></label>
+	</body>
+</html>

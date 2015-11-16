@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using Data</title>
+		<script src="lib/angular.js"></script>
+		<style type="text/css" media="screen">
+			.Pune{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body ng-app ng-init="myCompData = {
+									name: 'Synechron',
+									headCount: 4000,
+									city: 'Pune',
+									inDelhi: true
+										}">
+		<div class="{{myCompData.city}}" style="width: {{myCompData.name.length * 50;}}px; height:250px">
+			<h1>{{myCompData.name}}</h1>
+			<h1>Head Count : {{myCompData.headCount * 2}}</h1>
+			<h1>{{"We are currently in " + myCompData.city}}</h1>
+			<h1 ng-show="myCompData.inDelhi">We are in Delhi as well!</h1>
+		</div>
+	</body>
+</html>

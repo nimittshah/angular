@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="lib/angular.js"></script>
+	</head>
+	<body ng-app>
+		<input ng-model="data" />
+		<br/>
+		<label>{{data | lowercase}}</label>
+		<br/>
+		<label>{{data | uppercase}}</label>
+		<br/>
+		<label>{{data.length}}</label>
+		<br/>
+		<label>{{data.length * 5}}</label>
+		<br/>
+	</body>
+</html>
