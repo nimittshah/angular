@@ -12,7 +12,9 @@
     {title : 'Phantom',		photo : 'images/phantom.jpg',	city:'Bangalla',	popular:4,        releaseDate:'2015-09-19',    ticketPrice:75.78456},
     {title : 'Superman',	photo : 'images/superman.jpg',	city:'Metropolis',	popular:6,        releaseDate:'2015-08-20',    ticketPrice:200.45678},
     {title : 'Rajani',		photo : 'images/rajani.jpg',	city:'Chennai',		popular:10,        releaseDate:'2015-09-21',    ticketPrice:450.67845}
-		]">
+		];
+		nos = 2;
+		offset = 0">
 		
 		<input type="text" ng-model="sortBy" />
 		<table border="0" cellpadding="5" cellspacing="5">
@@ -24,14 +26,9 @@
 				<th ng-click="val='releaseDate'; reverse=!reverse">Release Date</th>
 				<th ng-click="val='ticketPrice'; reverse=!reverse">Ticket Price</th>
 			</tr>
-			<tr ng-repeat="hero in heros | filter : {title:sortBy}"> <!-- filter : sortBy track by hero.ticketPrice | orderBy: val : reverse-->
+			<tr ng-repeat="hero in heros | limitTo: nos : offset"> <!-- filter : sortBy track by hero.ticketPrice | orderBy: val : reverse-->
 				<td>
-					<img src="images/start.jpg" ng-show="$first"/>
-					<img src="images/finish.png" ng-show="$last"/>
-					<img src="images/inbetween.png" ng-show="$middle"/>
-					<label ng-show="$odd"> Odd </label>
-					<label ng-show="$even"> Even </label>
-					{{$index + 1 + ". " + hero.title | uppercase}}</td>
+					{{offset+$index +1+ ". " + hero.title | uppercase}}</td>
 				<td><img ng-src="{{hero.photo}}" width="30" align="absmiddle"/></td>
 				<td>{{hero.city}}</td>
 				<td>{{hero.popular}}</td>
@@ -39,5 +36,8 @@
 				<td>{{hero.ticketPrice | currency:'INR '}}</td>
 			</tr>
 		</table>
+		
+		<button ng-hide="offset < 1" ng-click="offset=offset-2"><img src="images/start.jpg"/></button>
+		<button ng-hide="offset > 5" ng-click="offset=offset+2"><img src="images/finish.png" /></button>
 	</body>
 </html>
