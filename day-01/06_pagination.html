@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Using Data</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="lib/angular.js"></script>
 	</head>
 	<body ng-app ng-init="heros=[
@@ -17,7 +19,9 @@
 		offset = 0">
 		
 		<input type="text" ng-model="sortBy" />
-		<table border="0" cellpadding="5" cellspacing="5">
+		<br/>
+		<br/>
+		<table border="0" cellpadding="5" cellspacing="5" class="table">
 			<tr>
 				<th ng-click="val='title'; reverse=!reverse">Title</th>
 				<th ng-click="val='photo'; reverse=!reverse">Photo</th>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using Data</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="lib/angular.js"></script>
+		<script src="lib/angular-route.js"></script>
+		<script src="app/module/module.js"></script>
+		<script src="app/controller/controller.js"></script>
+		<style type="text/css" media="screen">
+			.txt{
+				position: absolute;
+    			right: 0;
+			}
+			select{
+				position: absolute;
+    			right: 190px;
+			    height: 27px;
+			    width: 100px;
+			}
+			li{
+				list-style:none;
+				display:inline;
+			}
+		</style>
+	</head>
+	<body ng-app="app">
+		<div ng-controller="myController">
+			<ul>
+				<li><a ng-href="home">Home</a></li>
+				<li><a ng-href="about">About</a></li>
+			</ul>
+			<div ng-view></div>
+		</div>
+	</body>
+</html>

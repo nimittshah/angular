@@ -1,0 +1,26 @@
+<input type="text" ng-model="myFilter" class="txt"/>
+<select>
+	<option value="title">Title</option>
+	<option value="city">City</option>
+	<option value="popular">Popular</option>
+</select>
+<h1>{{title}}</h1>
+<table border="0" cellpadding="5" cellspacing="5" class="table table-hover">
+	<tr>
+		<th ng-click="sortOn('title'); reverse=!reverse">Title</th>
+		<th>Photo</th>
+		<th ng-click="sortOn('city'); reverse=!reverse">City</th>
+		<th ng-click="sortOn('popular'); reverse=!reverse">Popular</th>
+		<th ng-click="sortOn('releaseDate'); reverse=!reverse">Release Date</th>
+		<th ng-click="sortOn('ticketPrice'); reverse=!reverse">Ticket Price</th>
+	</tr>
+	<tr ng-repeat="hero in heros | orderBy: val : reverse | filter: {title: myFilter}"> <!-- filter : sortBy track by hero.ticketPrice | orderBy: val : reverse-->
+		<td>
+			{{offset+$index +1+ ". " + hero.title | uppercase}}</td>
+		<td><img ng-src="{{hero.photo}}" width="30" align="absmiddle"/></td>
+		<td>{{hero.city}}</td>
+		<td>{{hero.popular}}</td>
+		<td>{{hero.releaseDate | date: 'dd MMMM, yyyy'}}</td>
+		<td>{{hero.ticketPrice | currency:'INR '}}</td>
+	</tr>
+</table>
